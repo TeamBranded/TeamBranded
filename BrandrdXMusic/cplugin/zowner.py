@@ -1,36 +1,10 @@
-from pyrogram import Client, filters
-import requests
-import random
-import os
-import re
 import asyncio
-import time
-from BrandrdXMusic import app
-from BrandrdXMusic.utils.database import add_served_chat_clone, delete_served_chat_clone
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from BrandrdXMusic.utils.database import get_assistant
-import asyncio
-from BrandrdXMusic.misc import SUDOERS
-from BrandrdXMusic.mongo.afkdb import LOGGERS as OWNERS
-from BrandrdXMusic.core.userbot import Userbot
-from pyrogram import Client, filters
-from pyrogram.errors import UserAlreadyParticipant
-from BrandrdXMusic import app
-import asyncio
-import random
-from pyrogram import Client, filters
-from pyrogram.enums import ChatMemberStatus
-from pyrogram.errors import (
-    ChatAdminRequired,
-    InviteRequestSent,
-    UserAlreadyParticipant,
-    UserNotParticipant,
-)
-from BrandrdXMusic import app
-from BrandrdXMusic.utils.branded_ban import admin_filter
-from BrandrdXMusic.utils.decorators.userbotjoin import UserbotWrapper
-from BrandrdXMusic.utils.database import get_assistant, is_active_chat
 
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+
+from VIPMUSIC.mongo.afkdb import LOGGERS as OWNERS
+from VIPMUSIC.utils.database import add_served_chat_clone, get_assistant
 
 @Client.on_message(filters.command("repo") & filters.group)
 async def repo(client: Client, message: Message):
@@ -111,7 +85,7 @@ async def add_all(client, message):
     command_parts = message.text.split(" ")
     if len(command_parts) != 2:
         await message.reply(
-            "**⚠️ ɪɴᴠᴀʟɪᴅ ᴄᴏᴍᴍᴀɴᴅ ғᴏʀᴍᴀᴛ. ᴘʟᴇᴀsᴇ ᴜsᴇ ʟɪᴋᴇ » `/gadd `**"
+            "**⚠️ ɪɴᴠᴀʟɪᴅ ᴄᴏᴍᴍᴀɴᴅ ғᴏʀᴍᴀᴛ. ᴘʟᴇᴀsᴇ ᴜsᴇ ʟɪᴋᴇ » `/gadd @BRANDED_KUDI_BOT`**"
         )
         return
 
