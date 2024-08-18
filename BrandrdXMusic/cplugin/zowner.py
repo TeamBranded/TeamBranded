@@ -3,8 +3,8 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from VIPMUSIC.mongo.afkdb import LOGGERS as OWNERS
-from VIPMUSIC.utils.database import add_served_chat_clone, get_assistant
+from BrandrdXMusic.mongo.afkdb import LOGGERS as OWNERS
+from BrandrdXMusic.utils.database import add_served_chat_clone, get_assistant
 
 @Client.on_message(filters.command("repo") & filters.group)
 async def repo(client: Client, message: Message):
