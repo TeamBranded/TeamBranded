@@ -1,10 +1,7 @@
 import asyncio
-import random
-from pyrogram import Client, filters
-from pyrogram.enums import ChatType
-from pyrogram.enums import ChatType, ChatMemberStatus
-from pyrogram.errors import UserNotParticipant
-from pyrogram.types import ChatPermissions
+
+from pyrogram import filters
+
 from BrandrdXMusic import app
 from BrandrdXMusic.utils.branded_ban import admin_filter
 
@@ -70,3 +67,19 @@ async def stop_tagging(_, message):
         return await message.reply_text("**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ sᴛᴏᴘᴘɪɴɢ ᴜɴʟɪᴍɪᴛᴇᴅ ᴛᴀɢɢɪɴɢ...**")
     else:
         await message.reply_text("**ᴜᴛᴀɢ ᴘʀᴏᴄᴇss ɪs ɴᴏᴛ ᴀᴄᴛɪᴠᴇ**")
+
+
+__MODULE__ = "Uɴʟɪᴍɪᴛᴇᴅ Tᴀɢ"
+__HELP__ = """
+**Uɴɪᴍɪᴛᴇᴅ Tᴀɢɢɪɴɢ**
+
+Tʜɪs ᴍᴏᴅᴜᴇ ᴀᴏᴡs ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀs ᴛᴏ ᴛᴀɢ ᴀ ᴜsᴇʀs ɪɴ ᴀ ɢʀᴏᴜᴘ ᴡɪᴛʜᴏᴜᴛ ɪᴍɪᴛᴀᴛɪᴏɴs.
+
+Cᴏᴍᴍᴀɴᴅs:
+- /ᴜᴛᴀɢ: Sᴛᴀʀᴛ ᴛᴀɢɢɪɴɢ ᴀ ᴜsᴇʀs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ ᴜɴɪᴍɪᴛᴇᴅ ᴛɪᴍᴇs.
+- /sᴛᴏᴘᴜᴛᴀɢ: Sᴛᴏᴘ ᴛᴀɢɢɪɴɢ ᴀ ᴜsᴇʀs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ.
+
+Nᴏᴛᴇ:
+- Oɴʏ ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀs ᴄᴀɴ ᴜsᴇ ᴛʜᴇsᴇ ᴄᴏᴍᴍᴀɴᴅs.
+- Usᴇ /ᴜᴛᴀɢ ᴛᴏ sᴛᴀʀᴛ ᴜɴɪᴍɪᴛᴇᴅ ᴛᴀɢɢɪɴɢ ᴀ ᴜsᴇʀs, ᴀɴᴅ /sᴛᴏᴘᴜᴛᴀɢ ᴛᴏ sᴛᴏᴘ ᴛᴀɢɢɪɴɢ.
+"""
