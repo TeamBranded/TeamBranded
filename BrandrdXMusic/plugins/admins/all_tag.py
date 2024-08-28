@@ -1,22 +1,22 @@
 import asyncio
-import random
-from pyrogram import Client, filters
-from pyrogram.enums import ChatType, ChatMemberStatus
-from pyrogram.errors import UserNotParticipant
-from pyrogram.types import ChatPermissions
+
+from pyrogram import filters
+
 from BrandrdXMusic import app
 from BrandrdXMusic.utils.branded_ban import admin_filter
-
 
 SPAM_CHATS = []
 
 
 @app.on_message(
-    filters.command(["all", "mention", "mentionall"], prefixes=["/", "@", ".", "#"])
+    filters.command(["all", "mention", "mentionall"], prefixes=["/", "@", "#"])
     & admin_filter
 )
 async def tag_all_users(_, message):
-
+    if message.chat.id in SPAM_CHATS:
+        return await message.reply_text(
+            "ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss ɪs ᴀʟʀᴇᴀᴅʏ ʀᴜɴɴɪɴɢ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ sᴛᴏᴘ sᴏ ᴜsᴇ /cancel"
+        )
     replied = message.reply_to_message
     if len(message.command) < 2 and not replied:
         await message.reply_text(
@@ -97,3 +97,31 @@ async def cancelcmd(_, message):
     else:
         await message.reply_text("**ɴᴏ ᴘʀᴏᴄᴇss ᴏɴɢᴏɪɴɢ!**")
         return
+
+
+__MODULE__ = "Tᴀɢ Aʟʟ"
+__HELP__ = """
+**Tᴀɢ A Usᴇʀs**
+
+Tʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴀᴏᴡs ᴀᴅᴍɪɴs ᴛᴏ ᴛᴀɢ ᴀ ᴜsᴇʀs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʜᴀɴɴᴇ.
+
+Cᴏᴍᴍᴀɴᴅs:
+- /ᴀ <ᴛᴇxᴛ>: Tᴀɢ ᴀ ᴜsᴇʀs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʜᴀɴɴᴇ ᴡɪᴛʜ ᴛʜᴇ ᴘʀᴏᴠɪᴅᴇᴅ ᴛᴇxᴛ.
+- /ᴍᴇɴᴛɪᴏɴ <ᴛᴇxᴛ>: Tᴀɢ ᴀ ᴜsᴇʀs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʜᴀɴɴᴇ ᴡɪᴛʜ ᴛʜᴇ ᴘʀᴏᴠɪᴅᴇᴅ ᴛᴇxᴛ.
+- /ᴍᴇɴᴛɪᴏɴᴀ <ᴛᴇxᴛ>: Tᴀɢ ᴀ ᴜsᴇʀs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʜᴀɴɴᴇ ᴡɪᴛʜ ᴛʜᴇ ᴘʀᴏᴠɪᴅᴇᴅ ᴛᴇxᴛ.
+
+Tᴏ sᴛᴏᴘ ᴛᴀɢɢɪɴɢ:
+- /sᴛᴏᴘᴍᴇɴᴛɪᴏɴ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+- /ᴏғғᴀ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+- /ᴄᴀɴᴄᴇ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+- /ᴀsᴛᴏᴘ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+- /sᴛᴏᴘᴀ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+- /ᴄᴀɴᴄᴇᴍᴇɴᴛɪᴏɴ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+- /ᴏғғᴍᴇɴᴛɪᴏɴ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+- /ᴍᴇɴᴛɪᴏɴᴏғғ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+- /ᴀᴏғғ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+- /ᴄᴀɴᴄᴇᴀ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+- /ᴀᴄᴀɴᴄᴇ: Sᴛᴏᴘ ᴛʜᴇ ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss.
+
+Nᴏᴛᴇ: Oɴʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴜsᴇ ᴛʜᴇsᴇ ᴄᴏᴍᴍᴀɴᴅs.
+"""
