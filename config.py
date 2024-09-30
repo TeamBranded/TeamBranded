@@ -8,11 +8,11 @@ from pyrogram import filters
 load_dotenv()
 
 # Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID", None))
-API_HASH = getenv("API_HASH", None)
+API_ID = int(getenv("API_ID", "23877011"))
+API_HASH = getenv("API_HASH", "9c03f0ff01716b7b0113a4a1811affef")
 
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN", None)
+BOT_TOKEN = getenv("BOT_TOKEN", "6679174347:AAF0u7NrGpsc5w8_KVSiIBFIpT0B2SL7C-8")
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Brandedsuppport:BRANDEDKING82@brandedking.8tdaa12.mongodb.net/?retryWrites=true&w=majority")
 MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", None)
@@ -21,7 +21,7 @@ PRIVATE_BOT_MODE = getenv("PRIVATE_BOT_MODE", None)
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 900))
 
 # Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID", None))
+LOGGER_ID = int(getenv("LOGGER_ID", "-1001754457302"))
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002198719573"))
 
 # Get this value from @BRANDRD_ROBOT on Telegram by /id
