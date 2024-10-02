@@ -25,7 +25,6 @@ python-dotenv
 pyyaml
 tgcrypto
 telegraph==2.2.0
-yt-dlp
 lexica-api==1.4.7
 httpx==0.25.2
 lyricsgenius
@@ -33,8 +32,9 @@ spotipy
 SafoneAPI
 googlesearch-python
 unidecode
-#git+https://github.com/joetats/youtube_search@master
-#git+https://github.com/alexmercerind/youtube-search-python@main
-https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.23.zip
+git+https://github.com/yt-dlp/yt-dlp
 git+https://github.com/AsmSafone/SafoneAPI
+git+https://github.com/joetats/youtube_search@master
+git+https://github.com/alexmercerind/youtube-search-python@main
+https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.23.zip
 bing_image_downloader
