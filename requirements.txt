@@ -31,7 +31,6 @@ httpx==0.25.2
 lyricsgenius
 spotipy
 SafoneAPI
-youtube_search
 googlesearch-python
 unidecode
 #git+https://github.com/joetats/youtube_search@master
