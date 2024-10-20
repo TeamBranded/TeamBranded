@@ -23,7 +23,6 @@ from BrandrdXMusic.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 
-
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message, _):
@@ -33,7 +32,7 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = help_pannel(_)
-            await message.reply_sticker("CAACAgQAAxkBAAEQ245ljYcpjiUzNlnqZayXwYGXQdQUYgAC2Q8AAnsbSFJTlxo-p_AUAAEzBA")
+            await message.reply_sticker("CAACAgUAAxkBAAEQI1RlTLnRAy4h9lOS6jgS5FYsQoruOAAC1gMAAg6ryVcldUr_lhPexzME")
             return await message.reply_photo(
                 photo=config.START_IMG_URL,
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
@@ -84,7 +83,7 @@ async def start_pm(client, message: Message, _):
                     chat_id=config.LOGGER_ID,
                     text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>ᴛʀᴀᴄᴋ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
                 )
-        else:
+    else:
         out = private_panel(_)
         lol = await message.reply_text("Pʟᴇᴀsᴇ Wᴀɪᴛɪɴɢ...")
         await asyncio.sleep(0.5)
@@ -105,9 +104,7 @@ async def start_pm(client, message: Message, _):
             return await app.send_message(
                 chat_id=config.LOGGER_ID,
                 text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
-            )
-
-
+        )
 
 @app.on_message(filters.command(["start"]) & filters.group & ~BANNED_USERS)
 @LanguageStart
