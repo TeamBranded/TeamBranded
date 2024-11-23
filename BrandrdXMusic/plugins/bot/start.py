@@ -84,27 +84,67 @@ async def start_pm(client, message: Message, _):
                     text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>ᴛʀᴀᴄᴋ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
                 )
     else:
-        out = private_panel(_)
-        lol = await message.reply_text("Pʟᴇᴀsᴇ Wᴀɪᴛɪɴɢ...")
-        await asyncio.sleep(0.5)
-        await lol.edit("ꜱᴛᴀʀᴛɪɴɢ....")
-        await asyncio.sleep(0.3)
-        await lol.edit("Wᴇʟᴄᴏᴍᴇ ᴛᴏ BʀᴀɴᴅʀᴅXMᴜsɪᴄ.....")
-        await asyncio.sleep(0.4)
-        m = await message.reply_sticker("CAACAgUAAxkBAAEQI1BlTLmx7PtOO3aPNshEU2gCy7iAFgACNQUAApqMuVeA6eJ50VbvmDME")
-        await lol.delete()
+
+        try:
+            out = private_panel(_)
+            lol = await message.reply_text("𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ︎ {}.. ❣️".format(message.from_user.mention))
+            await lol.edit_text("𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ {}.. 🥳".format(message.from_user.mention))
+            await lol.edit_text("𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ {}.. 💥".format(message.from_user.mention))
+            await lol.edit_text("𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ {}.. 🤩".format(message.from_user.mention))
+            await lol.edit_text("𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ {}.. 💌".format(message.from_user.mention))
+            await lol.edit_text("𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐛𝐲 ꨄ {}.. 💞".format(message.from_user.mention))
+               
+            await lol.delete()
+            lols = await message.reply_text("**⚡️ѕ**")
+            await asyncio.sleep(0.1)
+            await lols.edit_text("⚡ѕт")        
+            await asyncio.sleep(0.1)
+            await lols.edit_text("**⚡ѕтα**")
+            await asyncio.sleep(0.1)
+            await lols.edit_text("**⚡ѕтαя**")
+            await asyncio.sleep(0.1)
+            await lols.edit_text("**⚡ѕтαят**")
+            await asyncio.sleep(0.1)
+            await lols.edit_text("**⚡ѕтαятι**")
+            await asyncio.sleep(0.1)
+            await lols.edit_text("**⚡ѕтαятιи**")
+            await asyncio.sleep(0.1)
+            await lols.edit_text("**⚡ѕтαятιиg**")
+            await asyncio.sleep(0.1)
+            await lols.edit_text("**⚡ѕтαятιиg.**")
+
+            await lols.edit_text("**⚡ѕтαятιиg....**")
+
+            await lols.edit_text("**⚡ѕтαятιиg.**")
+            await lols.edit_text("**⚡ѕтαятιиg....**")
+            m = await message.reply_sticker("CAACAgUAAxkBAAEQI1BlTLmx7PtOO3aPNshEU2gCy7iAFgACNQUAApqMuVeA6eJ50VbvmDME")
+            if message.chat.photo:
+
+                userss_photo = await app.download_media(
+                    message.chat.photo.big_file_id,
+                )
+            else:
+                userss_photo = "assets/nodp.png"
+            if userss_photo:
+                chat_photo = userss_photo
+            chat_photo = userss_photo if userss_photo else START_IMG_URL
+
+        except AttributeError:
+            chat_photo = "assets/nodp.png"
+        await lols.delete()
         await m.delete()
-        await asyncio.sleep(0.2)
         await message.reply_photo(
-            photo=config.START_IMG_URL,
+            photo=chat_photo,
             caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(out),
         )
-        if await is_on_off(2):
+        if await is_on_off(config.LOG):
+            sender_id = message.from_user.id
+            sender_name = message.from_user.first_name
             return await app.send_message(
-                chat_id=config.LOGGER_ID,
-                text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
-        )
+                config.LOG_GROUP_ID,
+                f"{message.from_user.mention} ʜᴀs sᴛᴀʀᴛᴇᴅ ʙᴏᴛ. \n\n**ᴜsᴇʀ ɪᴅ :** {sender_id}\n**ᴜsᴇʀ ɴᴀᴍᴇ:** {sender_name}",
+            )
 
 @app.on_message(filters.command(["start"]) & filters.group & ~BANNED_USERS)
 @LanguageStart
